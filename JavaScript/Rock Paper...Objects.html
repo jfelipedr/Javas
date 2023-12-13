@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <h2>(vs the computer)</h2>
+
+    <button onclick="
+        displayMessage(choseWinner('Rock',computerMove()));
+    ">Rock ✊</button>
+
+    <button onclick="
+        displayMessage(choseWinner('Paper',computerMove()));
+    ">Paper ✋</button>
+
+    <button onclick="
+        displayMessage(choseWinner('Scissors',computerMove()));       
+    ">Scissors ✌️</button> 
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.tides = 0;
+    ">Reset Score</button>
+
+    <script>
+        const score = { // The objects are defined with 'const'
+            wins:0,
+            losses:0,
+            tides:0
+        };
+
+        function computerMove() {
+            randomChoise = Math.floor(Math.random() * 3);//returns a random (0,1,2)
+            if (randomChoise === 0) {
+                computer = 'Rock ✊';
+            } else if (randomChoise === 1) {
+                computer = 'Paper ✋';
+            } else {
+                computer = 'Scissors ✌️';
+            }
+            return computer;
+        }
+
+        function choseWinner(user,computer) {
+            if (user === 'Rock') {
+                if (computer === 'Rock ✊') {
+                    result = 'tide';
+                    score.tides ++;
+                } else if (computer === 'Paper ✋') {
+                    result = 'lose';
+                    score.losses ++;
+                } else {
+                    result = 'win';
+                    score.wins ++;
+                }
+            } else if (user === 'Paper') {
+                if (computer === 'Rock ✊') {
+                    result = 'win';
+                    score.wins ++;
+                } else if (computer === 'Paper ✋') {
+                    result = 'tide';
+                    score.tides ++;
+                } else {
+                    result = 'lose';
+                    score.losses ++;
+                }
+            } else if (user === 'Scissors') {
+                if (computer === 'Rock ✊') {
+                    result = 'lose';
+                    score.losses ++;
+                } else if (computer === 'Paper ✋') {
+                    result = 'win';
+                    score.wins ++;
+                } else {
+                    result = 'tide';
+                    score.tides ++;
+                }
+            }
+            return result;
+        }
+
+        function displayMessage(result) {
+            const winText = 'You win ✨👏✨';
+            const loseText = 'You lose 😓';
+            const tideText = `It's a tide 😯`;
+
+            if (result === 'win') {
+                alert(`${winText}\n\nThe computer picked ${computer}\n\nWins:${score.wins} Losses:${score['losses']} Tides:${score.tides}`);
+            } else if (result === 'tide') {
+                alert(`${tideText}\n\nThe computer picked ${computer}\n\nWins:${score.wins} Losses:${score.losses} Tides:${score.tides}`);
+            } else {
+                alert(`${loseText}\n\nThe computer picked ${computer}\n\nWins:${score['wins']} Losses:${score.losses} Tides:${score.tides}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

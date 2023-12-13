@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <h2>(vs the computer)</h2>
+
+    <button onclick="
+        computer = Math.floor(Math.random() * 4);//returns a random between 1-3
+        
+        if (computer === 1) {
+            alert(`${tideText}\nThe computer picked Rock ✊`);
+        } else if (computer === 2) {
+            alert(`${loseText}\nThe computer picked Paper ✋`);
+        } else {
+            alert(`${winText}\nThe computer picked Scissors ✌️`);
+        }
+    ">Rock ✊</button>
+
+    <button onclick="
+        computer = Math.floor(Math.random() * 4);//returns a random between 1-3
+        
+        if (computer === 1) {
+            alert(`${winText}\nThe computer picked Rock ✊`);
+        } else if (computer === 2) {
+            alert(`${tideText}\nThe computer picked Paper ✋`);
+        } else {
+            alert(`${loseText}\nThe computer picked Scissors ✌️`);
+        }
+    ">Paper ✋</button>
+
+    <button onclick="
+        computer = Math.floor(Math.random() * 4);//returns a random between 1-3
+        
+        if (computer === 1) {
+            alert(`${loseText}\nThe computer picked Rock ✊`);
+        } else if (computer === 2) {
+            alert(`${winText}\nThe computer picked Paper ✋`);
+        } else {
+            alert(`${tideText}\nThe computer picked Scissors ✌️`);
+        }
+    ">Scissors ✌️</button>
+
+    <script>
+        /* '==' convert the variables at the same data type then compare its value, '===' compare if the variables has the same value, same behavior with '!=' and '!==' 
+        console.log(1 == '1');  1 is equal to '1', because of the convertion
+        console.log(1 === '1');  is a better practice to use '===' and '!=='
+        logical operators:
+        && and, || or, ! not*/
+
+        /*  1 = rock 
+            2 = paper 
+            3 = scissors */
+        let computer = 0;
+        const winText = 'You win ✨👏✨';
+        const loseText = 'You lose 😓';
+        const tideText = `It's a tide 😯`;
+    </script>
+</body>
+
+</html>

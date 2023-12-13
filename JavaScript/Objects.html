@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+
+    <button onclick="
+        score.wins ++;
+    ">+1 Wins ✊</button>
+
+    <button onclick="
+        score.losses ++;
+    ">+1 Losses ✋</button>
+
+    <button onclick="
+        score.tides ++;       
+    ">+1 Tides ✌️</button>
+
+    <button onclick="
+        alert(`Wins:${score['wins']} Losses:${score.losses} Tides:${score.tides}`)
+    ">View Score</button>
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+    ">Reset Score</button>
+
+    <script>
+        /* localStorage.getItem('score') Allow to get the value of the variable named score from the local storage when the web is loaded */
+        let score = JSON.parse(localStorage.getItem('score')) || { // The objects are defined with 'const'
+            wins:0,
+            losses:0,
+            tides:0
+        };
+        /*const score = JSON.parse(scoreString);  'parse' convert a JSON styring into a JS object */
+        /* scoreString = JSON.stringify(score);   'stringify' Convert a object in a string, using JSON sintax, 
+                                                    JSON doesn't support functions*/
+        /* localStorage allow us to save variables on the local storage, only strings
+        localStorage.setItem('nameOfVariable','contentOfVariable'); */
+        localStorage.setItem('score',JSON.stringify(score));
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        const object1 = {
+            message: 'hello',
+            price: 799
+        };
+        const object2 = object1;
+
+        object1.message = 'Good job!';
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good job!',
+            price: 799
+        };
+        console.log(object1 === object3);
+
+        // const message = object1.message;
+        const { message, price: cost } = object1;
+        console.log(message);
+        console.log(cost);
+
+        const object4 = {
+        // message: message,
+            message,
+        // method: function function1() {
+        // },
+        // method: function() {
+        // },
+            method() {
+            }
+        };
+        
+    </script>
+
+</body>
+
+</html>

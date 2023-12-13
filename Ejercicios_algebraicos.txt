@@ -1,0 +1,231 @@
+OPERACIONES MATEMATICAS
+
+************************
+
+Algoritmo Ejercicio1
+	Definir a Como Entero
+	Escribir "Digite un numero"
+	Leer a;
+	Si a>=0 Entonces
+		Escribir a,' es positivo';
+	Sino
+		Escribir a,' es negativo';
+	FinSi
+FinAlgoritmo
+
+*************************
+
+Algoritmo Ejercicio2
+	Definir a Como Entero 
+	Escribir "Digite un numero" 
+	Leer a;
+	b<-a MOD 2
+	Si b=0 Entonces
+		Escribir a, " es un numero par"
+	Sino
+		Escribir a, " es un numero impar"
+	Fin Si
+FinAlgoritmo 
+
+************************* 
+
+Algoritmo Ejercicio2
+	Definir a Como Entero 
+	Escribir "Digite un numero" 
+	Leer a;
+	Si 0=a MOD 2 Entonces
+		Escribir a, " es un numero par"
+	Sino
+		Escribir a, " es un numero impar"
+	Fin Si
+FinAlgoritmo 
+
+************************* 
+
+Algoritmo Ejercicio3
+	Escribir "Digite un numero" 
+	Leer a; 
+	Escribir "Digite otro numero" 
+	Leer b; 
+	Si a>b Entonces
+		Escribir a," es mayor que" b
+	Sino
+		Escribir a," es menor que" b
+	Fin Si
+FinAlgoritmo 
+
+************************* 
+
+Algoritmo Ejercicio3
+	Escribir "Digite un numero" 
+	Leer a; 
+	Escribir "Digite otro numero" 
+	Leer b; 
+	Si a=b Entonces
+		Escribir a," es igual que" b
+	Sino 
+		Si a>b Entonces
+			Escribir a," es mayor que" b
+		Sino
+			Escribir a," es menor que" b 
+		FinSi
+	FinSi
+FinAlgoritmo 
+
+************************ 
+****************************** 
+
+Algoritmo Ejercicio4
+	Escribir "Digite el valor de compra" 
+	Leer c; 
+	Si c>=200000 y c<=400000 Entonces
+		d=c*0.02
+	Sino
+		Si c>400000 Entonces
+			d=c*0.03
+		Sino
+			d=0
+		Fin Si
+	Fin Si
+	t<-c-d
+	Escribir "Su descuento es de $" d  
+	Escribir "El valor total de su compra es $" t
+FinAlgoritmo 
+
+******************************* 
+
+Algoritmo Ejercicio5
+	Escribir "Escriba los años de trabajo en la empresa" 
+	Leer a; 
+	Si a>=5 y a<=10 Entonces
+		Escribir "Su bonificacion es de $1.000.000" 
+	Sino
+		Si a>10 Entonces
+			Escribir "Su bonificacion es de $2.000.000"
+		Sino
+			Escribir "Usted no recivira bonificacion"
+		Fin Si
+	Fin Si
+FinAlgoritmo 
+
+******************************* 
+
+Algoritmo Ejercicio5
+	Escribir "Escriba el año de ingreso a la empresa" 
+	Leer a;  
+	b<-2016-a
+	Si b>=5 y b<=10 Entonces
+		Escribir "Su bonificacion es de $1.000.000" 
+	Sino
+		Si b>10 Entonces
+			Escribir "Su bonificacion es de $2.000.000"
+		Sino
+			Escribir "Usted no recivira bonificacion"
+		Fin Si
+	Fin Si
+FinAlgoritmo
+
+******************************* 
+
+Algoritmo Ejercicio6 
+	Escribir "Digite un numero" 
+	Leer a; 
+	Escribir "Digite otro numero" 
+	Leer b; 
+	Si b mod a=0 Entonces
+		Escribir b," es divisibles por " a 
+	Sino
+		Escribir b," no es divisibles por " a
+	Fin Si
+FinAlgoritmo 
+
+******************************* 
+
+Algoritmo Ejercicio6 
+	Escribir "Digite un numero" 
+	Leer a; 
+	Escribir "Digite otro numero" 
+	Leer b; 
+	c<-b/a
+	Si b mod a=0 Entonces
+		Escribir b," es divisibles por " a 
+		Escribir "El resultado es = " c
+	Sino
+		Escribir b," no es divisibles por " a 
+		Escribir "El resultado es = " c
+	Fin Si
+FinAlgoritmo 
+
+*******************************
+ 
+Algoritmo Ejercicio7
+	Escribir "Escriba su edad" 
+	Leer a; 
+	Escribir "Escriba su genero"
+	Leer b;
+	Si a>=18 y a<=22  Entonces
+		Escribir "Aprobo"
+	Sino
+		Si  b="femenino" Entonces
+			Escribir "Aprobo"
+		Sino
+			Escribir"Reprobo"
+		Fin Si
+	Fin Si
+FinAlgoritmo 
+
+****************************** 
+********************************
+Algoritmo Ejercicio8 
+	Escribir "Escriba dos numeros" 
+	Leer a,b	
+	Si a<=b Entonces
+		Mientras a<=b Hacer
+			a<-a+1 
+			Escribir a
+		Fin Mientras
+	Sino
+		Si b<=a Entonces
+			Mientras b<=a Hacer
+				b<-b+1 
+				Escribir b
+			Fin Mientras
+		Sino
+		Fin Si
+	Fin Si
+FinAlgoritmo
+
+***********************************
+
+Algoritmo Ejercicio9
+	Definir cuenta,a1,a2,a3 como real
+	cuenta<-1
+	a1<-0 
+	a2<-0
+	a3<-0
+	Mientras  n<10 o n>99 Hacer
+		Escribir "Escriba un numero de dos cifras"
+		Leer n
+	  Mientras cuenta<=8 Hacer
+		 Si n>=10 y n<=40 Entonces
+			a1<-a1+1
+		 Sino
+			 Si n>=41 y n<=60 Entonces
+				a2<-a2+1
+			 Sino
+				 Si n>=61 y n<=99 Entonces
+					a3<-a3+1
+				 Sino
+					
+				 Fin Si
+			 Fin Si
+		 Fin Si 
+		 cuenta<-cuenta+1
+	   Fin Mientras
+    Fin Mientras
+	Escribir a1," numeros estan en el intervalo [10,40]" 
+	Escribir a2," numeros estan en el intervalo [41,60]"
+	Escribir a3," numeros estan en el intervalo [61,99]"
+FinAlgoritmo 
+
+*****************************

@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    font-family: monospace;
+}
+
+.title {
+    font-size: 45px;
+}
+
+.move-icon {
+    height: 100px;
+}
+
+.move-button {
+    background-color: transparent;
+    border: 3px solid white;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.reset-button {
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-left: 100px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.result {
+    font-size: 45px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+
+.computer {
+    font-size: 45px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+
+.score {
+    font-size: 45px;
+    font-family: monospace;
+    margin-top: 10px;
+}

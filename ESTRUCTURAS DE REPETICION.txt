@@ -1,0 +1,115 @@
+ESTRUCTURAS DE REPETICION Y APLICACION 
+
+****************************** 
+Algoritmo Ejercicio1
+	a<-1
+	Mientras a<=5 Hacer
+		Escribir a
+		a<-a+1
+	Fin Mientras
+FinAlgoritmo 
+
+****************************** 
+
+Algoritmo Ejercicio1 
+Para a<-1 Hasta 5 Con Paso 1 Hacer
+	Escribir a 
+Fin Para
+FinAlgoritmo 
+
+****************************** 
+
+Algoritmo Ejercicio2
+	a<-4 
+	Mientras a<=12 Hacer
+		Escribir a 
+		a<-a+2
+	Fin Mientras
+FinAlgoritmo 
+
+***************************** 
+
+Algoritmo Ejercicio3
+	a<-20
+	Mientras a<=20 y a>=15 Hacer
+		Escribir a
+		a<-a-1
+	Fin Mientras
+FinAlgoritmo 
+
+***************************** 
+
+Algoritmo Ejercicio4
+	a<-35
+	Mientras a<=35 y a>=10 Hacer
+		Escribir a
+		a<-a-5
+	Fin Mientras
+FinAlgoritmo 
+
+***************************** 
+
+Algoritmo Ejercicio5
+	Escribir "Digite un numero menor a 20"
+	Leer a 
+	Mientras a<20 y a>=1 Hacer
+		Escribir a
+		a<-a-3
+	Fin Mientras
+FinAlgoritmo 
+
+***************************** 
+
+Algoritmo Ejercicio6
+	Escribir "Escriba dos  numeros, el primero menor que el segundo" 
+	Leer a, b
+	Mientras a<=b Hacer
+		Escribir a 
+		a<-a+2
+	Fin Mientras
+FinAlgoritmo 
+
+***************************** 
+
+Algoritmo Ejercicio7
+	Definir suma, cuenta, promedio Como Real
+    suma<-0 
+	cuenta<-1 
+	Mientras cuenta<=5 Hacer
+		Escribir "Escriba un numero" 
+		Leer a 
+		suma<-suma+a 
+		promedio<-suma/5
+		cuenta<-cuenta+1
+	Fin Mientras 
+	Escribir "La suma es: " suma 
+	Escribir "El promedio es: " promedio
+FinAlgoritmo 
+
+**************************** 
+**********************************
+Algoritmo sin_titulo
+	Definir clave, cuenta, n Como Entero
+	clave<-5463
+	cuenta<-1
+	Escribir "dijite su clave"
+	leer n
+	Si n=clave Entonces
+		Escribir "entrada segura"
+	Fin Si
+	cuenta<-cuenta+1	
+	Mientras n<>clave y cuenta<=3 Hacer
+		Escribir "clave errada"
+		Escribir "dijite su clave"
+		cuenta<-cuenta+1
+		leer n
+		Si n<>clave Entonces
+			Escribir " "
+		Sino Escribir "entrada segura"
+		fin si 
+	fin mientras
+	Si n<>clave Entonces
+		Escribir "clave errada"
+		Escribir "tarjeta bloqueada"
+	Fin Si
+	FinAlgoritmo

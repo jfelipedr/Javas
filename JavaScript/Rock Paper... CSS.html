@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            background-color: rgb(24, 24, 24);
+            color: white;
+            font-family: monospace;
+        }
+
+        .title {
+            font-size: 45px;
+        }
+
+        .move-icon {
+            height: 100px;
+        }
+
+        .move-button {
+            background-color: transparent;
+            border: 3px solid white;
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            margin-left: 100px;
+            cursor: pointer;
+        }
+
+        .reset-button {
+            background-color: white;
+            border: none;
+            font-size: 20px;
+            padding: 10px 15px;
+            margin-left: 100px;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+
+        .result {
+            font-size: 45px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+
+        .computer {
+            font-size: 45px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+
+        .score {
+            font-size: 45px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="title">Rock✊ Paper🖐️ Scissors✌️</p>
+    <p class="title">vs the computer</p>
+
+    <button onclick="
+        displayMessage(choseWinner('Rock',computerMove()));
+    "   class="move-button">
+        <img src="images/rock.png" class="move-icon">
+    </button>
+
+    <button onclick="
+        displayMessage(choseWinner('Paper',computerMove()));
+    "   class="move-button">
+        <img src="images/paper.png" class="move-icon">
+    </button>
+
+    <button onclick="
+        displayMessage(choseWinner('Scissors',computerMove()));       
+    "   class="move-button">
+        <img src="images/scissors.png" class="move-icon">
+    </button>
+
+    <p></p>
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.tides = 0;
+        document.querySelector('.js-score')
+            .innerHTML = `Wins:${score['wins']} Losses:${score.losses} Tides:${score.tides}`;
+        document.querySelector('.js-result')
+            .innerHTML = 'Play Again 🤔';
+        document.querySelector('.js-computer')
+            .innerHTML = '';
+    "   class="reset-button">
+        Reset Score
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-computer computer"></p>
+    <p class="js-score score"></p>
+
+    <script>
+        const score = { // The objects are defined with 'const'
+            wins: 0,
+            losses: 0,
+            tides: 0
+        };
+
+        function computerMove() {
+            randomChoise = Math.floor(Math.random() * 3);//returns a random (0,1,2)
+            if (randomChoise === 0) {
+                computer = 'Rock ✊';
+            } else if (randomChoise === 1) {
+                computer = 'Paper 🖐️';
+            } else {
+                computer = 'Scissors ✌️';
+            }
+            return computer;
+        }
+
+        function choseWinner(user, computer) {
+            if (user === 'Rock') {
+                if (computer === 'Rock ✊') {
+                    result = 'tide';
+                    score.tides++;
+                } else if (computer === 'Paper 🖐️') {
+                    result = 'lose';
+                    score.losses++;
+                } else {
+                    result = 'win';
+                    score.wins++;
+                }
+            } else if (user === 'Paper') {
+                if (computer === 'Rock ✊') {
+                    result = 'win';
+                    score.wins++;
+                } else if (computer === 'Paper 🖐️') {
+                    result = 'tide';
+                    score.tides++;
+                } else {
+                    result = 'lose';
+                    score.losses++;
+                }
+            } else if (user === 'Scissors') {
+                if (computer === 'Rock ✊') {
+                    result = 'lose';
+                    score.losses++;
+                } else if (computer === 'Paper 🖐️') {
+                    result = 'win';
+                    score.wins++;
+                } else {
+                    result = 'tide';
+                    score.tides++;
+                }
+            }
+            return result;
+        }
+
+        function displayMessage(result) {
+            const winText = 'You win ✨👏✨';
+            const loseText = 'You lose 😓';
+            const tideText = `It's a tide 😯`;
+
+            if (result === 'win') {
+                document.querySelector('.js-result')
+                    .innerHTML = winText;
+                document.querySelector('.js-computer')
+                    .innerHTML = `The computer picked ${computer}`;
+            } else if (result === 'tide') {
+                document.querySelector('.js-result')
+                    .innerHTML = tideText;
+                document.querySelector('.js-computer')
+                    .innerHTML = `The computer picked ${computer}`;
+            } else {
+                document.querySelector('.js-result')
+                    .innerHTML = loseText;
+                document.querySelector('.js-computer')
+                    .innerHTML = `The computer picked ${computer}`;
+            }
+            document.querySelector('.js-score')
+                .innerHTML = `Wins:${score['wins']} Losses:${score.losses} Tides:${score.tides}`;
+        }
+    </script>
+</body>
+
+</html>

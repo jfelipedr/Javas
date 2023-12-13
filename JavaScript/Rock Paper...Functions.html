@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <h2>(vs the computer)</h2>
+
+    <button onclick="
+        computer = computerMove();
+        choseWinner('Rock');
+    ">Rock ✊</button>
+
+    <button onclick="
+        computer = computerMove();
+        choseWinner('Paper');
+    ">Paper ✋</button>
+
+    <button onclick="
+        computer = computerMove();
+        choseWinner('Scissors');        
+    ">Scissors ✌️</button>
+
+    <script>
+        function computerMove() {
+            computer = Math.floor(Math.random() * 3);//returns a random (0,1,2)
+            return computer;
+        }
+
+        function choseWinner(user) {
+            const winText = 'You win ✨👏✨';
+            const loseText = 'You lose 😓';
+            const tideText = `It's a tide 😯`;
+
+            if (user === 'Rock') {
+                if (computer === 0) {
+                    alert(`${tideText}\nThe computer picked Rock ✊`);
+                } else if (computer === 1) {
+                    alert(`${loseText}\nThe computer picked Paper ✋`);
+                } else {
+                    alert(`${winText}\nThe computer picked Scissors ✌️`);
+                }
+            } else if (user === 'Paper') {
+                if (computer === 0) {
+                    alert(`${winText}\nThe computer picked Rock ✊`);
+                } else if (computer === 1) {
+                    alert(`${tideText}\nThe computer picked Paper ✋`);
+                } else {
+                    alert(`${loseText}\nThe computer picked Scissors ✌️`);
+                }
+            } else {
+                if (computer === 0) {
+                    alert(`${loseText}\nThe computer picked Rock ✊`);
+                } else if (computer === 1) {
+                    alert(`${winText}\nThe computer picked Paper ✋`);
+                } else {
+                    alert(`${tideText}\nThe computer picked Scissors ✌️`);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

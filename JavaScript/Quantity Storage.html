@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Storage</title>
+</head>
+
+<body>
+    <h1>Quantity Storage</h1>
+
+    <button onclick="
+    console.log(`Storage Quantity: ${storage}`);
+    ">Display Quantity</button>
+    
+    <button onclick="
+    storage ++;//same as storage += 1
+    console.log(`Storage Quantity: ${storage}`);
+    ">+ 1</button>
+    
+    <button onclick="
+    storage += 2;
+    console.log(`Storage Quantity: ${storage}`);
+    ">+ 2</button>
+    
+    <button onclick="
+    storage += 3;
+    console.log(`Storage Quantity: ${storage}`);
+    ">+ 3</button>
+    
+    <button onclick="
+    storage = c1;
+    console.log(`Storage Quantity has been reset.\nStorage: ${storage}`);
+    ">Reset Storage</button>
+    
+    <script>//Inside script we can use JavaScript
+        //'let / var' allow us to create variables and 'const' create constants
+        let message = 'Hello';
+        var message1 = 'World';
+        const c1 = 0;
+        //alert(message);
+        message = 'Good bye';/*we can re asing the value of a variable with out 'let', use that only for creation*/
+        let storage = c1;
+    </script>
+</body>
+</html>

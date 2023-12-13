@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/rock paper scissors.css">
+</head>
+
+<body>
+    <p class="title">Rock✊ Paper🖐️ Scissors✌️</p>
+    <p class="title">vs the computer</p>
+
+    <button onclick="
+        displayMessage(choseWinner('Rock',computerMove()));
+    "   class="move-button">
+        <img src="images/rock.png" class="move-icon">
+    </button>
+
+    <button onclick="
+        displayMessage(choseWinner('Paper',computerMove()));
+    "   class="move-button">
+        <img src="images/paper.png" class="move-icon">
+    </button>
+
+    <button onclick="
+        displayMessage(choseWinner('Scissors',computerMove()));       
+    "   class="move-button">
+        <img src="images/scissors.png" class="move-icon">
+    </button>
+
+    <p></p>
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.tides = 0;
+        document.querySelector('.js-score')
+            .innerHTML = `Wins:${score['wins']} Losses:${score.losses} Tides:${score.tides}`;
+        document.querySelector('.js-result')
+            .innerHTML = 'Play Again 🤔';
+        document.querySelector('.js-computer')
+            .innerHTML = '';
+    "   class="reset-button">
+        Reset Score
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-computer computer"></p>
+    <p class="js-score score"></p>
+
+    <script src="scripts/rock paper scissors.js"></script>
+</body>
+
+</html>
